@@ -173,6 +173,11 @@ Sorbet/RedundantExtendTSig:
   Safe: false
   VersionAdded: 0.7.0
 
+Sorbet/RedundantOrInRbiVersioning:
+  Description: 'TODO: Write a description of the cop.'
+  Enabled: pending
+  VersionAdded: '<<next>>'
+
 Sorbet/SignatureBuildOrder:
   Description: >-
                   Enforces the order of parts in a signature.

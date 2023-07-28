@@ -14,6 +14,7 @@ require_relative "sorbet/type_alias_name"
 
 require_relative "sorbet/rbi/forbid_extend_t_sig_helpers_in_shims"
 require_relative "sorbet/rbi/forbid_rbi_outside_of_allowed_paths"
+require_relative "sorbet/rbi/redundant_or_in_rbi_versioning"
 require_relative "sorbet/rbi/single_line_rbi_class_module_definitions"
 
 require_relative "sorbet/signatures/allow_incompatible_override"
