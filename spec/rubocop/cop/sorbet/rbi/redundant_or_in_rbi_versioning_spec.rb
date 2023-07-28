@@ -1,21 +1,12 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::Sorbet::RedundantOrInRbiVersioning, :config do
-  let(:config) { RuboCop::Config.new }
-
-  # TODO: Write test code
-  #
-  # For example
-  it 'registers an offense when using `#bad_method`' do
-    expect_offense(<<~RUBY)
-      bad_method
-      ^^^^^^^^^^ Use `#good_method` instead of `#bad_method`.
-    RUBY
-  end
-
-  it 'does not register an offense when using `#good_method`' do
-    expect_no_offenses(<<~RUBY)
-      good_method
-    RUBY
+RSpec.describe(RuboCop::Cop::Sorbet::RedundantOrInRbiVersioning, :config) do
+  it "registers an offense when RBI version annotations include a redundant or" do
+    expect_offense(<<~RBI)
+      # @version > 0.3.4
+      # @version > 0.3.5
+      ^^^^^^^^^^^^^^^^^^ Multi-line version annotations should not contain overlapping versions
+      def foo; end
+    RBI
   end
 end
